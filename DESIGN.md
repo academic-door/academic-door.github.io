@@ -71,6 +71,7 @@ Section spacing is generally `64–80px` on desktop and `48–64px` on mobile. L
 - Header: light sticky treatment, visible focus, reliable mobile disclosure.
 - Buttons: command-oriented text, maximum `6px` radius, clear primary/secondary hierarchy.
 - Paper records: title first, then author, source/date, and a one-sentence research question.
+- Editorial ordering: China research prioritizes journals in the existing `hourly_crossref_priority` TOP/A+ source set, then recency; the latest NBER stream places verified China-related papers before the remaining weekly records.
 - Tags: small topical metadata, not pill decoration.
 - Project previews: real screenshots, cropped to show the product interface rather than generic atmosphere.
 - QR code: integrated with the follow message and project statement.
@@ -104,4 +105,3 @@ Section spacing is generally `64–80px` on desktop and `48–64px` on mobile. L
 - **Concept A**: the hero behaves like the opening spread of an academic review, with an annotated current-issue table of contents.
 - **Concept B**: the homepage behaves like a precise, browsable research index with a visible record system.
 - **Concept C**: the project portfolio becomes a pair of full-width editorial publications inside one calm institutional identity.
-

@@ -41,6 +41,8 @@ It best balances the four jobs of the homepage:
 
 For the final homepage, retain Concept A’s overall architecture and visual system. Consider borrowing only one element from Concept B: the compact category switcher, if real content later becomes dynamically loaded.
 
+Concept A now also demonstrates two explicit editorial ranking rules: the China stream uses the existing TOP/A+ priority-source list before recency, and the NBER stream places verified China-related papers first. These rules should be generated from project data in production rather than maintained as handwritten homepage copy.
+
 ## Emil Kowalski Motion Review
 
 | Before | After | Why |

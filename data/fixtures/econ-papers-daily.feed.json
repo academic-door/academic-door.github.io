@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-18T22:00:00Z",
+  "project": "econ-papers-daily",
+  "items": [
+    {
+      "id": "doi:10.1016/j.jdeveco.2026.07.0001",
+      "title": "Suing the Leviathan: The Effect of Trans-Regional Jurisdiction Reform on Corporate Investment",
+      "authors": ["Example Author A", "Example Author B"],
+      "source": "Journal of Development Economics",
+      "date": "2026-07-16",
+      "url": "https://academic-door.github.io/econ-paper-monitor/topics/china/",
+      "research_question_zh": "跨区域司法管辖改革如何影响中国企业投资？",
+      "is_china_related": true,
+      "editorial_tier": "TOP",
+      "tags": ["中国研究", "法与经济学"]
+    },
+    {
+      "id": "doi:10.1016/j.jdeveco.2026.07.0002",
+      "title": "Securing Power, Compromising Climate: Evidence from Drought Shocks in China",
+      "authors": ["Example Author C"],
+      "source": "Journal of Development Economics",
+      "date": "2026-07-11",
+      "url": "https://academic-door.github.io/econ-paper-monitor/topics/china/",
+      "research_question_zh": "干旱冲击下的电力保障会带来怎样的气候代价？",
+      "is_china_related": true,
+      "editorial_tier": "TOP",
+      "tags": ["中国研究", "能源与环境"]
+    },
+    {
+      "id": "doi:10.1016/j.worlddev.2026.07.0003",
+      "title": "Beyond the Aid Model: University-Community Partnerships in Rural China",
+      "authors": ["Example Author D", "Example Author E"],
+      "source": "World Development",
+      "date": "2026-07-11",
+      "url": "https://academic-door.github.io/econ-paper-monitor/topics/china/",
+      "research_question_zh": "大学与社区如何在中国偏远农村形成超越援助的合作？",
+      "is_china_related": true,
+      "editorial_tier": "A+",
+      "tags": ["中国研究", "发展经济学"]
+    },
+    {
+      "id": "doi:10.1111/apel.2026.07.0004",
+      "title": "Digital Technology and Pension Insurance Participation in China: Evidence from a Nationwide Reform with an Intentionally Very Long Title to Exercise the Layout",
+      "authors": ["Example Author F"],
+      "source": "Applied Economics",
+      "date": "2026-07-17",
+      "url": "https://academic-door.github.io/econ-paper-monitor/topics/china/",
+      "research_question_zh": "数字技术如何影响中国养老保险参保行为？",
+      "is_china_related": true,
+      "tags": ["中国研究", "社会保障"]
+    },
+    {
+      "id": "DOI:10.1016/J.JDEVECO.2026.07.0001",
+      "title": "Suing the Leviathan (duplicate entry, different id casing, must be deduplicated)",
+      "source": "Journal of Development Economics",
+      "date": "2026-07-16",
+      "url": "https://academic-door.github.io/econ-paper-monitor/topics/china/",
+      "is_china_related": true,
+      "editorial_tier": "TOP"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+/* feed-consumer.css — long-title handling for feed-rendered records.
+ *
+ * Titles are rendered in full in the DOM (screen readers and find-in-page
+ * always get the complete text). The clamp below is a purely visual limit,
+ * per the accessibility requirement: no forced character truncation. */
+
+.feed-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@media (max-width: 480px) {
+  .feed-title {
+    -webkit-line-clamp: 4;
+  }
+}

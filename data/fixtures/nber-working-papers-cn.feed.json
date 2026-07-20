@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-18T22:00:00Z",
+  "project": "nber-working-papers-cn",
+  "items": [
+    {
+      "id": "nber:w35468",
+      "title": "Supply and Demand with Market Heterogeneity",
+      "authors": ["Example Author G"],
+      "source": "NBER Working Paper",
+      "date": "2026-07-13",
+      "url": "https://academic-door.github.io/nber-working-papers-cn/papers/w35468.html",
+      "research_question_zh": "市场异质性如何改变供需识别？",
+      "is_china_related": false,
+      "tags": ["市场设计"]
+    },
+    {
+      "id": "nber:w35453",
+      "title": "Financial Sanctions and the Global Payments Network",
+      "authors": ["Example Author H"],
+      "source": "NBER Working Paper",
+      "date": "2026-07-13",
+      "url": "https://academic-door.github.io/nber-working-papers-cn/papers/w35453.html",
+      "research_question_zh": "金融制裁如何改变目标银行对全球支付网络的接入？",
+      "is_china_related": true,
+      "tags": ["国际金融", "中国相关"]
+    },
+    {
+      "id": "nber:w35449",
+      "title": "Ports, Technology and Inter-City Trade",
+      "authors": ["Example Author I"],
+      "source": "NBER Working Paper",
+      "date": "2026-07-13",
+      "url": "https://academic-door.github.io/nber-working-papers-cn/papers/w35449.html",
+      "research_question_zh": "中国港口运营商如何改变全球海运网络与效率？",
+      "is_china_related": true,
+      "tags": ["国际贸易", "中国相关"]
+    },
+    {
+      "id": "nber:w35470",
+      "title": "A Non-China Paper with the Highest Number, Which Must Still Rank Below Verified China-Related Papers",
+      "source": "NBER Working Paper",
+      "date": "2026-07-13",
+      "url": "https://academic-door.github.io/nber-working-papers-cn/papers/w35470.html",
+      "research_question_zh": "用于验证排序规则的示例记录。",
+      "is_china_related": false
+    },
+    {
+      "id": "NBER:W35453",
+      "title": "Financial Sanctions (duplicate entry, different id casing, must be deduplicated)",
+      "source": "NBER Working Paper",
+      "date": "2026-07-13",
+      "url": "https://academic-door.github.io/nber-working-papers-cn/papers/w35453.html",
+      "is_china_related": true
+    }
+  ]
+}

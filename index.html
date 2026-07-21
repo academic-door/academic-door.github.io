@@ -66,9 +66,18 @@
   .skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:8px 16px;z-index:99}
   .skip-link:focus{left:0}
 
-  .dateline{border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--ink2)}
-  .dateline .shell{display:flex;justify-content:space-between;padding-top:9px;padding-bottom:9px}
+  .dateline{border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--ink2)}
+  .dateline .shell{display:flex;justify-content:space-between;align-items:center;padding-top:9px;padding-bottom:9px}
+  .dateline .motto-line{font-family:var(--serif-zh);letter-spacing:.04em;color:var(--ink)}
   .dateline b{color:var(--red);font-weight:400}
+  .presence{display:none;align-items:center;gap:7px}
+  .presence.is-live{display:inline-flex}
+  .presence .dot{width:7px;height:7px;border-radius:50%;background:var(--green);position:relative}
+  .presence .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--green);opacity:.5;animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite}
+  @keyframes ping{0%{transform:scale(.7);opacity:.6}80%,100%{transform:scale(1.9);opacity:0}}
+  .presence .n{color:var(--ink);font-weight:400}
+  @media(prefers-reduced-motion:reduce){.presence .dot::after{animation:none}}
+
   header.site{position:sticky;top:0;background:rgba(244,242,237,.98);z-index:9;border-bottom:2px solid var(--ink)}
   .h-in{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1180px;margin:0 auto}
   .brand{display:flex;align-items:center;gap:12px}
@@ -124,14 +133,16 @@
   .research-stream{border-right:1px solid var(--line);padding:28px 28px 10px;position:relative}
   .research-stream::before{content:"";position:absolute;top:-2px;left:0;width:56px;height:4px}
   .s-ed::before{background:var(--ink)} .s-cn::before{background:var(--green)} .s-nb::before{background:var(--red)}
-  .research-stream .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:var(--ink2);display:block;margin:14px 0 6px}
+  .research-stream .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--ink2);display:block;margin:14px 0 6px}
   .research-stream h3{font-family:var(--serif-zh);font-size:1.35rem;margin-bottom:16px}
   .paper-row{display:grid;grid-template-columns:2.1em 1fr;gap:12px;padding:18px 0;border-top:1px solid var(--line);transition:background .18s}
   .paper-row:hover{background:rgba(23,32,28,.035)}
   .paper-row>span{font-family:var(--mono);color:var(--red);font-size:.76rem;padding-top:5px;transition:transform .18s}
   .paper-row:hover>span{transform:translateX(3px)}
-  .paper-source{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--ink2);margin-bottom:7px}
+  .paper-source{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--ink2);margin-bottom:7px}
   .paper-row h4{font-family:var(--serif-en);font-size:1.02rem;line-height:1.42;font-weight:600}
+  .paper-row a.paper-link{color:inherit;text-decoration:none;display:block}
+  .paper-row a.paper-link:hover h4{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:1.5px;text-underline-offset:3px}
   .paper-row:hover h4{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:1.5px;text-underline-offset:3px}
   .paper-row div>p:not(.paper-source){color:var(--ink2);font-size:.85rem;margin-top:6px}
   .more{display:flex;justify-content:space-between;font-size:.8rem;color:var(--green);padding:14px 0;border-top:1px solid var(--line);font-family:var(--mono);letter-spacing:.06em}
@@ -173,7 +184,8 @@
   .about p{color:var(--ink2);max-width:36em}
   .about .disclaimer{font-size:.8rem;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
   .wechat{background:var(--paper);border:1px solid var(--line);border-top:4px double var(--ink);padding:28px;display:flex;gap:24px;align-items:center}
-  .wechat img{display:block;border:1px solid var(--line)}
+  .wechat .qr{flex:none;width:132px;height:132px;background:#fff;border:1px solid var(--line);padding:8px;display:flex;align-items:center;justify-content:center}
+  .wechat .qr img{display:block;width:100%;height:100%;object-fit:contain}
   .wechat p{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--ink2)}
   .wechat h3{font-family:var(--serif-zh);font-size:1.3rem;margin:6px 0 4px}
   .wechat strong{display:block;color:var(--green);font-size:.9rem;margin-bottom:6px}
@@ -197,8 +209,7 @@
   }
   @media(max-width:640px){
     .shell{padding:0 20px}
-    .dateline .shell{justify-content:center}
-    .dateline span:first-child{display:none}
+    .dateline .shell{justify-content:center;gap:16px}
     .h-in{flex-direction:column;align-items:stretch;gap:12px;padding:14px 20px}
     .brand b{font-size:1.1rem}
     nav.primary{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-top:1px solid var(--line);padding-top:10px}
@@ -216,7 +227,10 @@
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
-<div class="dateline"><div class="shell"><span>ACADEMIC DOOR — ECONOMICS LITERATURE, IN CHINESE</span><span><b>●</b> 每日多次更新</span></div></div>
+<div class="dateline"><div class="shell">
+  <span class="motto-line">读好文献，用好论文</span>
+  <span class="presence" id="presence" data-endpoint="https://econ-paper-monitor-presence.academic-door.workers.dev/presence" aria-live="polite"><span class="dot" aria-hidden="true"></span><span><b class="n" id="presence-count">—</b> 人在线</span></span>
+</div></div>
 <header class="site"><div class="h-in">
   <a class="brand" href="index.html" aria-label="Academic Door 首页">
     <img src="assets/academic-door-mark.png" width="44" height="25" alt="">
@@ -240,8 +254,8 @@
     <header><b>本周论文预览</b><span>WEEK 30</span></header>
     <ol>
       <li><a href="https://academic-door.github.io/nber-working-papers-cn/papers/w35497.html"><span class="no">01</span><span><b class="t">Exorbitant Privilege of the Periodic Table?</b><small>NBER Working Paper · 2026-07-20</small><em>中国相关 · 战略矿产</em></span></a></li>
-      <li><a href="https://academic-door.github.io/econ-paper-monitor/recent72/"><span class="no">02</span><span><b class="t">A Two-Pronged Approach to Currency Internationalization</b><small>Journal of International Economics · 2026-07-21</small><em>国际金融</em></span></a></li>
-      <li><a href="https://academic-door.github.io/econ-paper-monitor/topics/china/"><span class="no">03</span><span><b class="t">Large Industrial Clusters in the Long Run</b><small>Review of Economic Studies · 2026-07-20</small><em>中国研究 · TOP</em></span></a></li>
+      <li><a href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=a-two-pronged-approach-to-currency-internationalization-70a25677bcc0"><span class="no">02</span><span><b class="t">A Two-Pronged Approach to Currency Internationalization</b><small>Journal of International Economics · 2026-07-21</small><em>国际金融</em></span></a></li>
+      <li><a href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=large-industrial-clusters-in-the-long-run-evidence-from-million-rouble-p-0019fd579c88"><span class="no">03</span><span><b class="t">Large Industrial Clusters in the Long Run</b><small>Review of Economic Studies · 2026-07-20</small><em>中国研究 · TOP</em></span></a></li>
     </ol>
     <div class="foot"><a href="https://academic-door.github.io/econ-paper-monitor/recent72/">打开最新索引 →</a></div>
   </aside>
@@ -252,23 +266,23 @@
   <div class="grid3">
     <section class="research-stream s-ed reveal">
       <span class="tag">编辑选择 · WEEKLY</span><h3>本周值得关注</h3>
-      <article class="paper-row"><span>01</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><h4>A Two-Pronged Approach to Currency Internationalization</h4><p>货币国际化为何需要贸易与金融渠道双管齐下？</p></div></article>
-      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><h4>Melitz Meets Lewis: The Impacts of Roads on Structural Transformation and Businesses</h4><p>道路建设如何通过企业重配推动结构转型？</p></div></article>
-      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF ENVIRONMENTAL ECONOMICS AND MANAGEMENT · 07.20</p><h4>Testing for Spillovers in Resource Conservation</h4><p>资源节约干预会否产生跨行为溢出？</p></div></article>
+      <article class="paper-row"><span>01</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=a-two-pronged-approach-to-currency-internationalization-70a25677bcc0"><h4>A Two-Pronged Approach to Currency Internationalization</h4></a><p>货币国际化为何需要贸易与金融渠道双管齐下？</p></div></article>
+      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=melitz-meets-lewis-the-impacts-of-roads-on-structural-transformation-and-d2013c219a94"><h4>Melitz Meets Lewis: The Impacts of Roads on Structural Transformation and Businesses</h4></a><p>道路建设如何通过企业重配推动结构转型？</p></div></article>
+      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF ENVIRONMENTAL ECONOMICS AND MANAGEMENT · 07.20</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=testing-for-spillovers-in-resource-conservation-evidence-from-a-natural--028e17755c95"><h4>Testing for Spillovers in Resource Conservation</h4></a><p>资源节约干预会否产生跨行为溢出？</p></div></article>
       <a class="more" href="https://academic-door.github.io/econ-paper-monitor/recent72/"><span>VIEW ALL</span><span>查看 177 篇 →</span></a>
     </section>
     <section class="research-stream s-cn reveal">
       <span class="tag">专题索引 · TOP / A+ 优先</span><h3>中国经济研究</h3>
-      <article class="paper-row"><span>01</span><div><p class="paper-source">REVIEW OF ECONOMIC STUDIES · 07.20 · 中国相关</p><h4>Large Industrial Clusters in the Long Run: Evidence from Million-Rouble Plants in China</h4><p>苏联援建的百万卢布工厂如何塑造中国长期产业集聚？</p></div></article>
-      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.16 · 中国相关</p><h4>Suing the Leviathan: The Effect of Trans-Regional Jurisdiction Reform on Corporate Investment</h4><p>跨区域司法管辖改革如何影响中国企业投资？</p></div></article>
-      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.11 · 中国相关</p><h4>Securing Power, Compromising Climate: Evidence from Drought Shocks in China</h4><p>干旱冲击下的电力保障会带来怎样的气候代价？</p></div></article>
+      <article class="paper-row"><span>01</span><div><p class="paper-source">REVIEW OF ECONOMIC STUDIES · 07.20 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=large-industrial-clusters-in-the-long-run-evidence-from-million-rouble-p-0019fd579c88"><h4>Large Industrial Clusters in the Long Run: Evidence from Million-Rouble Plants in China</h4></a><p>苏联援建的百万卢布工厂如何塑造中国长期产业集聚？</p></div></article>
+      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.16 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=suing-the-leviathan-the-effect-of-trans-regional-jurisdiction-reform-on--2dab5f658add"><h4>Suing the Leviathan: The Effect of Trans-Regional Jurisdiction Reform on Corporate Investment</h4></a><p>跨区域司法管辖改革如何影响中国企业投资？</p></div></article>
+      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.11 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=securing-power-compromising-climate-evidence-from-drought-shocks-in-chin-40f5d8f1aa23"><h4>Securing Power, Compromising Climate: Evidence from Drought Shocks in China</h4></a><p>干旱冲击下的电力保障会带来怎样的气候代价？</p></div></article>
       <a class="more" href="https://academic-door.github.io/econ-paper-monitor/topics/china/"><span>VIEW ALL</span><span>查看 598 篇 →</span></a>
     </section>
     <section class="research-stream s-nb reveal">
       <span class="tag">工作论文 · 中国相关优先</span><h3>最新 NBER</h3>
-      <article class="paper-row"><span>01</span><div><p class="paper-source">NBER W35497 · 07.20 · 中国相关</p><h4>Exorbitant Privilege of the Periodic Table?</h4><p>中国通过加工投资和产业政策形成的矿产网络中心性，如何转化为全球定价权？</p></div></article>
-      <article class="paper-row"><span>02</span><div><p class="paper-source">NBER W35496 · 07.20 · 中国相关</p><h4>Supply Chain Risk, Trade and Economic Fragility</h4><p>中国来源的供应链风险如何重配生产并影响各国福利？</p></div></article>
-      <article class="paper-row"><span>03</span><div><p class="paper-source">NBER W35506 · 07.20</p><h4>Economic Models of Identity Formation and Cultural Transmission</h4><p>代际文化传递如何塑造身份、极化与社会认同？</p></div></article>
+      <article class="paper-row"><span>01</span><div><p class="paper-source">NBER W35497 · 07.20 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35497.html"><h4>Exorbitant Privilege of the Periodic Table?</h4></a><p>中国通过加工投资和产业政策形成的矿产网络中心性，如何转化为全球定价权？</p></div></article>
+      <article class="paper-row"><span>02</span><div><p class="paper-source">NBER W35496 · 07.20 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35496.html"><h4>Supply Chain Risk, Trade and Economic Fragility</h4></a><p>中国来源的供应链风险如何重配生产并影响各国福利？</p></div></article>
+      <article class="paper-row"><span>03</span><div><p class="paper-source">NBER W35506 · 07.20</p><a class="paper-link" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35506.html"><h4>Economic Models of Identity Formation and Cultural Transmission</h4></a><p>代际文化传递如何塑造身份、极化与社会认同？</p></div></article>
       <a class="more" href="https://academic-door.github.io/nber-working-papers-cn/weekly/2026-07-20.html"><span>VIEW ALL</span><span>查看 39 篇 →</span></a>
     </section>
   </div>
@@ -289,11 +303,11 @@
   <div><p class="pn">PROJECT 01 · DAILY</p><h3 id="proj1">Econ Papers Daily</h3><p>每天发现值得关注的经济学期刊论文与工作论文。</p>
     <dl><div><dt>更新频率</dt><dd>每日多次监测</dd></div><div><dt>核心功能</dt><dd>72 小时 · 中国相关 · 检索</dd></div></dl>
     <a class="btn" href="https://academic-door.github.io/econ-paper-monitor/">进入每日论文</a></div>
-  <div class="shot"><img src="assets/project-previews/econ-papers-daily.png" alt="Econ Papers Daily 项目页面预览"></div>
+  <div class="shot"><img src="assets/project-previews/econ-papers-daily.png" alt="Econ Papers Daily 项目页面预览" loading="lazy" decoding="async"></div>
 </div></section>
 <section class="band alt" aria-labelledby="proj2"><div class="shell">
   <span class="vol">02</span>
-  <div class="shot"><img src="assets/project-previews/nber-working-papers-cn.png" alt="NBER Working Papers CN 项目页面预览"></div>
+  <div class="shot"><img src="assets/project-previews/nber-working-papers-cn.png" alt="NBER Working Papers CN 项目页面预览" loading="lazy" decoding="async"></div>
   <div><p class="pn">PROJECT 02 · WEEKLY</p><h3 id="proj2">NBER Working Papers CN</h3><p>每周完整追踪 NBER Working Papers，并提供中文整理与历史索引。</p>
     <dl><div><dt>更新频率</dt><dd>每周一自动更新</dd></div><div><dt>核心功能</dt><dd>中英摘要 · 周报 · 月度合集</dd></div></dl>
     <a class="btn" href="https://academic-door.github.io/nber-working-papers-cn/">进入 NBER 项目</a></div>
@@ -313,7 +327,7 @@
     <p>Academic Door / 学术传送门是面向中文读者的非盈利学术交流项目，持续追踪经济学期刊、工作论文与中国相关研究。</p>
     <p class="disclaimer">中文内容由 AI 辅助翻译与人工整理，可能存在误差。论文原文、版本与版权信息请以原始来源为准。</p></div>
   <div class="wechat" id="wechat">
-    <img src="assets/academic-door-qr.jpg" width="132" height="132" alt="学术传送门微信公众号二维码">
+    <div class="qr"><img src="assets/academic-door-qr.jpg" width="116" height="116" alt="学术传送门微信公众号二维码" loading="lazy" decoding="async"></div>
     <div><p>WECHAT OFFICIAL</p><h3>学术传送门</h3><strong>读好文献，用好论文</strong><span>扫码关注，获取持续更新的前沿文献。</span></div>
   </div>
 </div></section>
@@ -329,5 +343,43 @@
   <div style="text-align:right">内容与版权以论文原始来源为准<br><span class="motto">读好文献，用好论文</span></div>
 </div></footer>
 
+<script>
+  (function () {
+    var el = document.getElementById("presence");
+    if (!el) return;
+    var endpoint = el.getAttribute("data-endpoint");
+    if (!endpoint) return;
+    var out = document.getElementById("presence-count");
+    var storageKey = "epd_presence_client";
+    var clientId;
+    try {
+      clientId = localStorage.getItem(storageKey);
+      if (!clientId) {
+        clientId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+        localStorage.setItem(storageKey, clientId);
+      }
+    } catch (e) {
+      clientId = Math.random().toString(36).slice(2);
+    }
+    function refresh() {
+      var separator = endpoint.indexOf("?") === -1 ? "?" : "&";
+      fetch(endpoint + separator + "client_id=" + encodeURIComponent(clientId), {
+        cache: "no-store",
+        headers: { "Accept": "application/json" }
+      })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (d) {
+          var n = Number(d && (d.online != null ? d.online : d.count));
+          if (Number.isFinite(n) && n > 0) {
+            out.textContent = Math.floor(n);
+            el.classList.add("is-live");
+          }
+        })
+        .catch(function () { /* keep hidden */ });
+    }
+    refresh();
+    setInterval(refresh, 60000);
+  })();
+</script>
 </body>
 </html>

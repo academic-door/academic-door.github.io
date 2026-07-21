@@ -70,7 +70,6 @@
   .dateline .shell{display:flex;justify-content:space-between;align-items:center;padding-top:9px;padding-bottom:9px}
   .dateline .motto-line{font-family:var(--serif-zh);letter-spacing:.04em;color:var(--ink)}
   .dateline b{color:var(--red);font-weight:400}
-  /* online presence badge — data-driven, hidden until a count is available */
   .presence{display:none;align-items:center;gap:7px}
   .presence.is-live{display:inline-flex}
   .presence .dot{width:7px;height:7px;border-radius:50%;background:var(--green);position:relative}
@@ -230,7 +229,7 @@
 <a class="skip-link" href="#main">跳到正文</a>
 <div class="dateline"><div class="shell">
   <span class="motto-line">读好文献，用好论文</span>
-  <span class="presence" id="presence" data-endpoint=""><span class="dot" aria-hidden="true"></span><span>在线 <b class="n" id="presence-count">—</b> 人</span></span>
+  <span class="presence" id="presence" data-endpoint="https://econ-paper-monitor-presence.academic-door.workers.dev/presence" aria-live="polite"><span class="dot" aria-hidden="true"></span><span><b class="n" id="presence-count">—</b> 人在线</span></span>
 </div></div>
 <header class="site"><div class="h-in">
   <a class="brand" href="index.html" aria-label="Academic Door 首页">
@@ -255,8 +254,8 @@
     <header><b>本周论文预览</b><span>WEEK 30</span></header>
     <ol>
       <li><a href="https://academic-door.github.io/nber-working-papers-cn/papers/w35497.html"><span class="no">01</span><span><b class="t">Exorbitant Privilege of the Periodic Table?</b><small>NBER Working Paper · 2026-07-20</small><em>中国相关 · 战略矿产</em></span></a></li>
-      <li><a href="https://academic-door.github.io/econ-paper-monitor/recent72/"><span class="no">02</span><span><b class="t">A Two-Pronged Approach to Currency Internationalization</b><small>Journal of International Economics · 2026-07-21</small><em>国际金融</em></span></a></li>
-      <li><a href="https://academic-door.github.io/econ-paper-monitor/topics/china/"><span class="no">03</span><span><b class="t">Large Industrial Clusters in the Long Run</b><small>Review of Economic Studies · 2026-07-20</small><em>中国研究 · TOP</em></span></a></li>
+      <li><a href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=a-two-pronged-approach-to-currency-internationalization-70a25677bcc0"><span class="no">02</span><span><b class="t">A Two-Pronged Approach to Currency Internationalization</b><small>Journal of International Economics · 2026-07-21</small><em>国际金融</em></span></a></li>
+      <li><a href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=large-industrial-clusters-in-the-long-run-evidence-from-million-rouble-p-0019fd579c88"><span class="no">03</span><span><b class="t">Large Industrial Clusters in the Long Run</b><small>Review of Economic Studies · 2026-07-20</small><em>中国研究 · TOP</em></span></a></li>
     </ol>
     <div class="foot"><a href="https://academic-door.github.io/econ-paper-monitor/recent72/">打开最新索引 →</a></div>
   </aside>
@@ -267,23 +266,23 @@
   <div class="grid3">
     <section class="research-stream s-ed reveal">
       <span class="tag">编辑选择 · WEEKLY</span><h3>本周值得关注</h3>
-      <article class="paper-row"><span>01</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><h4>A Two-Pronged Approach to Currency Internationalization</h4><p>货币国际化为何需要贸易与金融渠道双管齐下？</p></div></article>
-      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><h4>Melitz Meets Lewis: The Impacts of Roads on Structural Transformation and Businesses</h4><p>道路建设如何通过企业重配推动结构转型？</p></div></article>
-      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF ENVIRONMENTAL ECONOMICS AND MANAGEMENT · 07.20</p><h4>Testing for Spillovers in Resource Conservation</h4><p>资源节约干预会否产生跨行为溢出？</p></div></article>
+      <article class="paper-row"><span>01</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=a-two-pronged-approach-to-currency-internationalization-70a25677bcc0"><h4>A Two-Pronged Approach to Currency Internationalization</h4></a><p>货币国际化为何需要贸易与金融渠道双管齐下？</p></div></article>
+      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF INTERNATIONAL ECONOMICS · 07.21</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=melitz-meets-lewis-the-impacts-of-roads-on-structural-transformation-and-d2013c219a94"><h4>Melitz Meets Lewis: The Impacts of Roads on Structural Transformation and Businesses</h4></a><p>道路建设如何通过企业重配推动结构转型？</p></div></article>
+      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF ENVIRONMENTAL ECONOMICS AND MANAGEMENT · 07.20</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=testing-for-spillovers-in-resource-conservation-evidence-from-a-natural--028e17755c95"><h4>Testing for Spillovers in Resource Conservation</h4></a><p>资源节约干预会否产生跨行为溢出？</p></div></article>
       <a class="more" href="https://academic-door.github.io/econ-paper-monitor/recent72/"><span>VIEW ALL</span><span>查看 177 篇 →</span></a>
     </section>
     <section class="research-stream s-cn reveal">
       <span class="tag">专题索引 · TOP / A+ 优先</span><h3>中国经济研究</h3>
-      <article class="paper-row"><span>01</span><div><p class="paper-source">REVIEW OF ECONOMIC STUDIES · 07.20 · 中国相关</p><h4>Large Industrial Clusters in the Long Run: Evidence from Million-Rouble Plants in China</h4><p>苏联援建的百万卢布工厂如何塑造中国长期产业集聚？</p></div></article>
-      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.16 · 中国相关</p><h4>Suing the Leviathan: The Effect of Trans-Regional Jurisdiction Reform on Corporate Investment</h4><p>跨区域司法管辖改革如何影响中国企业投资？</p></div></article>
-      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.11 · 中国相关</p><h4>Securing Power, Compromising Climate: Evidence from Drought Shocks in China</h4><p>干旱冲击下的电力保障会带来怎样的气候代价？</p></div></article>
+      <article class="paper-row"><span>01</span><div><p class="paper-source">REVIEW OF ECONOMIC STUDIES · 07.20 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=large-industrial-clusters-in-the-long-run-evidence-from-million-rouble-p-0019fd579c88"><h4>Large Industrial Clusters in the Long Run: Evidence from Million-Rouble Plants in China</h4></a><p>苏联援建的百万卢布工厂如何塑造中国长期产业集聚？</p></div></article>
+      <article class="paper-row"><span>02</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.16 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=suing-the-leviathan-the-effect-of-trans-regional-jurisdiction-reform-on--2dab5f658add"><h4>Suing the Leviathan: The Effect of Trans-Regional Jurisdiction Reform on Corporate Investment</h4></a><p>跨区域司法管辖改革如何影响中国企业投资？</p></div></article>
+      <article class="paper-row"><span>03</span><div><p class="paper-source">JOURNAL OF DEVELOPMENT ECONOMICS · 07.11 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=securing-power-compromising-climate-evidence-from-drought-shocks-in-chin-40f5d8f1aa23"><h4>Securing Power, Compromising Climate: Evidence from Drought Shocks in China</h4></a><p>干旱冲击下的电力保障会带来怎样的气候代价？</p></div></article>
       <a class="more" href="https://academic-door.github.io/econ-paper-monitor/topics/china/"><span>VIEW ALL</span><span>查看 598 篇 →</span></a>
     </section>
     <section class="research-stream s-nb reveal">
       <span class="tag">工作论文 · 中国相关优先</span><h3>最新 NBER</h3>
-      <article class="paper-row"><span>01</span><div><p class="paper-source">NBER W35497 · 07.20 · 中国相关</p><h4>Exorbitant Privilege of the Periodic Table?</h4><p>中国通过加工投资和产业政策形成的矿产网络中心性，如何转化为全球定价权？</p></div></article>
-      <article class="paper-row"><span>02</span><div><p class="paper-source">NBER W35496 · 07.20 · 中国相关</p><h4>Supply Chain Risk, Trade and Economic Fragility</h4><p>中国来源的供应链风险如何重配生产并影响各国福利？</p></div></article>
-      <article class="paper-row"><span>03</span><div><p class="paper-source">NBER W35506 · 07.20</p><h4>Economic Models of Identity Formation and Cultural Transmission</h4><p>代际文化传递如何塑造身份、极化与社会认同？</p></div></article>
+      <article class="paper-row"><span>01</span><div><p class="paper-source">NBER W35497 · 07.20 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35497.html"><h4>Exorbitant Privilege of the Periodic Table?</h4></a><p>中国通过加工投资和产业政策形成的矿产网络中心性，如何转化为全球定价权？</p></div></article>
+      <article class="paper-row"><span>02</span><div><p class="paper-source">NBER W35496 · 07.20 · 中国相关</p><a class="paper-link" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35496.html"><h4>Supply Chain Risk, Trade and Economic Fragility</h4></a><p>中国来源的供应链风险如何重配生产并影响各国福利？</p></div></article>
+      <article class="paper-row"><span>03</span><div><p class="paper-source">NBER W35506 · 07.20</p><a class="paper-link" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35506.html"><h4>Economic Models of Identity Formation and Cultural Transmission</h4></a><p>代际文化传递如何塑造身份、极化与社会认同？</p></div></article>
       <a class="more" href="https://academic-door.github.io/nber-working-papers-cn/weekly/2026-07-20.html"><span>VIEW ALL</span><span>查看 39 篇 →</span></a>
     </section>
   </div>
@@ -345,23 +344,34 @@
 </div></footer>
 
 <script>
-  // Online-presence badge — progressive enhancement.
-  // The maintainer sets data-endpoint on #presence to a URL returning
-  // JSON {"online": <number>}. Empty endpoint or any failure leaves the
-  // badge hidden, so the header never shows a broken or fake value.
   (function () {
     var el = document.getElementById("presence");
     if (!el) return;
     var endpoint = el.getAttribute("data-endpoint");
     if (!endpoint) return;
     var out = document.getElementById("presence-count");
+    var storageKey = "epd_presence_client";
+    var clientId;
+    try {
+      clientId = localStorage.getItem(storageKey);
+      if (!clientId) {
+        clientId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+        localStorage.setItem(storageKey, clientId);
+      }
+    } catch (e) {
+      clientId = Math.random().toString(36).slice(2);
+    }
     function refresh() {
-      fetch(endpoint, { cache: "no-store" })
+      var separator = endpoint.indexOf("?") === -1 ? "?" : "&";
+      fetch(endpoint + separator + "client_id=" + encodeURIComponent(clientId), {
+        cache: "no-store",
+        headers: { "Accept": "application/json" }
+      })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (d) {
-          var n = d && (d.online != null ? d.online : d.count);
-          if (typeof n === "number" && n >= 0) {
-            out.textContent = n;
+          var n = Number(d && (d.online != null ? d.online : d.count));
+          if (Number.isFinite(n) && n > 0) {
+            out.textContent = Math.floor(n);
             el.classList.add("is-live");
           }
         })

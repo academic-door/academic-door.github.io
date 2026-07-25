@@ -9,6 +9,9 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://academic-door.github.io/">
 <link rel="icon" href="assets/academic-door-mark.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <meta property="og:title" content="Academic Door / 学术传送门｜经济学研究的门">
 <meta property="og:description" content="面向中文读者的开放经济学研究入口。读好文献，用好论文。">
 <meta property="og:type" content="website">
@@ -51,8 +54,8 @@
   :root{
     --bg:#ffffff; --ink:#0a0a0a; --ink2:#666; --ink3:#8c8c8c; --line:#e6e6e6; --line2:#d4d4d4;
     --accent:#0a0a0a; --hair:#efefef; --cn:#b4341f;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial,sans-serif;
-    --mono:"SFMono-Regular",ui-monospace,Consolas,"Liberation Mono",monospace;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",ui-monospace,Consolas,"Liberation Mono",monospace;
   }
   *{box-sizing:border-box;margin:0}
   html{scroll-behavior:smooth}
@@ -86,15 +89,15 @@
   nav.primary a:hover{color:var(--ink)}
   nav.primary a.cta{background:var(--ink);color:#fff;padding:8px 15px;border-radius:6px;font-size:13px}
 
-  /* hero */
-  .hero{padding:76px 0 20px}
+  /* hero — centered */
+  .hero{padding:84px 0 24px;text-align:center}
   .hero .eb{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:22px}
-  .hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;line-height:1.05;letter-spacing:-.035em;max-width:16ch}
+  .hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;line-height:1.05;letter-spacing:-.035em;max-width:18ch;margin:0 auto}
   .hero .en{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin-top:16px}
-  .hero p{font-size:17px;color:var(--ink2);margin-top:16px;max-width:44ch}
+  .hero p{font-size:17px;color:var(--ink2);margin:16px auto 0;max-width:44ch}
   /* search */
-  .search{margin:28px 0 0;display:flex;gap:10px;max-width:640px;flex-wrap:wrap}
-  .search .f{flex:1;min-width:240px;position:relative}
+  .search{margin:30px auto 0;display:flex;gap:10px;max-width:640px;flex-wrap:wrap;justify-content:center}
+  .search .f{flex:1;min-width:240px;position:relative;text-align:left}
   .search input{width:100%;padding:12px 14px 12px 38px;border:1px solid var(--line2);border-radius:6px;background:#fff;font:inherit;font-size:15px}
   .search .ic{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:14px}
   .search .scope{display:flex;gap:16px;align-items:center}
@@ -336,7 +339,7 @@
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (d) {
           var n = Number(d && (d.online != null ? d.online : d.count));
-          if (Number.isFinite(n) && n > 0) {
+          if (Number.isFinite(n) && n >= 0) {
             out.textContent = Math.floor(n);
             el.classList.add("is-live");
           }

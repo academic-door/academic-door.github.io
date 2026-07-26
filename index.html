@@ -86,15 +86,15 @@
   nav.primary a:hover{color:var(--ink)}
   nav.primary a.cta{background:var(--ink);color:#fff;padding:8px 15px;border-radius:6px;font-size:13px}
 
-  /* hero */
-  .hero{padding:76px 0 20px}
+  /* hero — centered */
+  .hero{padding:84px 0 24px;text-align:center}
   .hero .eb{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:22px}
-  .hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;line-height:1.05;letter-spacing:-.035em;max-width:16ch}
+  .hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;line-height:1.05;letter-spacing:-.035em;max-width:18ch;margin:0 auto}
   .hero .en{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin-top:16px}
-  .hero p{font-size:17px;color:var(--ink2);margin-top:16px;max-width:44ch}
+  .hero p{font-size:17px;color:var(--ink2);margin:16px auto 0;max-width:44ch}
   /* search */
-  .search{margin:28px 0 0;display:flex;gap:10px;max-width:640px;flex-wrap:wrap}
-  .search .f{flex:1;min-width:240px;position:relative}
+  .search{margin:30px auto 0;display:flex;gap:10px;max-width:640px;flex-wrap:wrap;justify-content:center}
+  .search .f{flex:1;min-width:240px;position:relative;text-align:left}
   .search input{width:100%;padding:12px 14px 12px 38px;border:1px solid var(--line2);border-radius:6px;background:#fff;font:inherit;font-size:15px}
   .search .ic{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:14px}
   .search .scope{display:flex;gap:16px;align-items:center}
@@ -336,7 +336,7 @@
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (d) {
           var n = Number(d && (d.online != null ? d.online : d.count));
-          if (Number.isFinite(n) && n > 0) {
+          if (Number.isFinite(n) && n >= 0) {
             out.textContent = Math.floor(n);
             el.classList.add("is-live");
           }

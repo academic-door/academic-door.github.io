@@ -9,6 +9,8 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://academic-door.github.io/">
 <link rel="icon" href="assets/academic-door-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/academic-door-mark.png">
+<link rel="alternate" type="application/rss+xml" title="Academic Door · Econ Papers Daily" href="https://academic-door.github.io/econ-paper-monitor/feed.xml">
 <meta property="og:title" content="Academic Door / 学术传送门｜经济学研究的门">
 <meta property="og:description" content="面向中文读者的开放经济学研究入口。读好文献，用好论文。">
 <meta property="og:type" content="website">
@@ -93,13 +95,13 @@
   .hero .en{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin-top:16px}
   .hero p{font-size:17px;color:var(--ink2);margin:16px auto 0;max-width:44ch}
   /* search */
-  .search{margin:30px auto 0;display:flex;gap:10px;max-width:640px;flex-wrap:wrap;justify-content:center}
+  .search{margin:30px auto 0;display:flex;gap:10px;max-width:640px;flex-wrap:wrap;justify-content:center;align-items:center}
   .search .f{flex:1;min-width:240px;position:relative;text-align:left}
-  .search input{width:100%;padding:12px 14px 12px 38px;border:1px solid var(--line2);border-radius:6px;background:#fff;font:inherit;font-size:15px}
-  .search .ic{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:14px}
-  .search .scope{display:flex;gap:16px;align-items:center}
-  .search .scope a{font-family:var(--mono);font-size:12.5px;color:var(--ink2);padding-bottom:2px;border-bottom:1.5px solid transparent}
-  .search .scope a.on{color:var(--ink);border-color:var(--ink)}
+  .search input{width:100%;padding:12px 14px 12px 40px;border:1px solid var(--line2);border-radius:6px;background:#fff;font:inherit;font-size:15px}
+  .search .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink3);display:flex}
+  .search .sbtn{background:var(--ink);color:#fff;border:none;border-radius:6px;padding:12px 22px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+  .search .sbtn:hover{background:#000}
+  .search .hint{width:100%;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink3);margin-top:4px}
 
   /* section head */
   .sh{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--ink);padding-bottom:10px;margin:64px 0 0}
@@ -110,7 +112,7 @@
   .sh .more:hover{color:var(--ink)}
 
   /* the hall — bordered door cards */
-  .doors{display:grid;grid-template-columns:repeat(4,1fr);gap:-1px;margin-top:24px;border:1px solid var(--line);border-radius:8px;overflow:hidden;grid-auto-rows:1fr}
+  .doors{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px;border:1px solid var(--line);border-radius:8px;overflow:hidden;grid-auto-rows:1fr}
   .door{border-right:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;min-height:250px;background:#fff;transition:background .16s}
   .door:last-child{border-right:none}
   .door:hover{background:#fafafa}
@@ -129,7 +131,7 @@
   .door .go .ar{display:inline-block;transition:transform .18s}
   .door:hover .go .ar{transform:translateX(3px)}
 
-  /* today */
+  /* featured + latest */
   .today{display:grid;grid-template-columns:2fr 1fr;gap:32px;margin-top:26px}
   .feature .fk{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cn)}
   .feature h3{font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:12px 0 6px}
@@ -138,24 +140,22 @@
   .feature .au{font-family:var(--mono);font-size:12.5px;color:var(--ink3);margin-top:12px}
   .feature .why{font-size:15px;color:var(--ink);margin-top:16px;padding-left:14px;border-left:2px solid var(--cn);line-height:1.55}
   .feature .src{font-family:var(--mono);font-size:11.5px;color:var(--ink3);margin-top:14px;letter-spacing:.03em}
-  .sub{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}
-  .sub .row{padding:11px 0;border-bottom:1px solid var(--hair)}
-  .sub .row:last-child{border-bottom:none}
-  .sub .row b{font-size:15px;font-weight:600;line-height:1.35}
-  .sub .row b a:hover{text-decoration:underline;text-underline-offset:2px}
-  .sub .row span{font-family:var(--mono);font-size:11px;color:var(--ink3);display:block;margin-top:3px}
-  .latest .lk{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--ink);padding-bottom:9px}
-  .latest .l{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid var(--hair)}
+  .latest .lk{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--ink);padding-bottom:9px;display:flex;justify-content:space-between}
+  .latest .lk .src2{color:var(--ink3)}
+  .latest .l{display:grid;grid-template-columns:52px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid var(--hair)}
+  .latest a.l:hover b{text-decoration:underline;text-underline-offset:2px}
   .latest .l .tm{font-family:var(--mono);font-size:11px;color:var(--ink3);padding-top:2px}
   .latest .l b{font-size:13.5px;font-weight:600;line-height:1.34}
   .latest .l .mt{font-family:var(--mono);font-size:11px;color:var(--ink3);margin-top:2px}
 
   /* collections */
   .colist{margin-top:22px;border-top:1px solid var(--ink)}
-  .colist a{display:grid;grid-template-columns:38px 1fr auto auto;align-items:baseline;gap:16px;padding:14px 4px;border-bottom:1px solid var(--line)}
+  .colist a,.colist .np{display:grid;grid-template-columns:38px 1fr auto auto;align-items:baseline;gap:16px;padding:14px 4px;border-bottom:1px solid var(--line)}
   .colist a:hover{background:#fafafa}
+  .colist .np{color:var(--ink3)}
   .colist .no{font-family:var(--mono);font-size:12px;color:var(--ink3)}
   .colist .nm{font-size:16px;font-weight:650}
+  .colist .np .nm{font-weight:500}
   .colist .ct{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
   .colist .ar{font-family:var(--mono);font-size:13px;color:var(--ink3)}
   .colist a:hover .ar{color:var(--ink)}
@@ -194,6 +194,7 @@
     .door{border-right:none}
     .charter ol{grid-template-columns:1fr}
     .hero{padding-top:52px}
+    .search .sbtn{flex:1}
   }
 </style>
 </head>
@@ -210,7 +211,7 @@
     <span><b>学术传送门</b><small>ACADEMIC DOOR</small></span>
   </a>
   <nav class="primary" aria-label="主要导航">
-    <a href="#hall">门厅</a><a href="#today">今日</a><a href="#collections">专题</a><a href="#about">关于</a><a class="cta" href="#about">订阅</a>
+    <a href="#hall">门厅</a><a href="#featured">精选</a><a href="#collections">专题</a><a href="#about">关于</a><a class="cta" href="https://academic-door.github.io/econ-paper-monitor/feed.xml">订阅 RSS</a>
   </nav>
 </div></header>
 
@@ -220,10 +221,11 @@
     <h1 id="a-title">为你打开经济学研究的门</h1>
     <div class="en">Doors into economics research</div>
     <p>从每日更新、工作论文、五大期刊到专业领域，持续整理、连接与呈现值得读的经济学研究。</p>
-    <div class="search">
-      <div class="f"><span class="ic">🔎</span><input placeholder="搜索论文、作者、期刊、领域或研究问题…" aria-label="全站搜索"></div>
-      <div class="scope"><a class="on">论文</a><a>作者</a><a>期刊</a><a>领域</a></div>
-    </div>
+    <form class="search" role="search" action="https://academic-door.github.io/econ-paper-monitor/search/" method="get">
+      <div class="f"><span class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"></circle><line x1="10.8" y1="10.8" x2="14.5" y2="14.5" stroke-linecap="round"></line></svg></span><input type="search" name="q" placeholder="检索论文标题、作者、DOI…" aria-label="全站检索"></div>
+      <button class="sbtn" type="submit">检索</button>
+      <span class="hint">检索由「每日之门 · Econ Papers Daily」提供</span>
+    </form>
   </section>
 
   <div class="sh" id="hall"><span class="k">The Hall</span><h2>门厅 · 四扇门</h2><span class="rule"></span></div>
@@ -231,30 +233,30 @@
     <a class="door" href="https://academic-door.github.io/econ-paper-monitor/">
       <div class="no">01</div><h3>每日之门</h3><div class="pn">Econ Papers Daily</div>
       <div class="q">今天，经济学界出现了哪些新研究？</div>
-      <div class="peek"><b lang="en">Who Drives Inequality?</b>J. Development Economics · 今日 16 期刊 + 57 工作论文</div>
+      <div class="peek"><b>期刊论文 + 工作论文</b>每日多次监测 · 中国相关优先 · 全站检索</div>
       <div class="foot"><span class="st"><span class="d"></span>运行中</span><span class="go">进入 <span class="ar">→</span></span></div>
     </a>
     <a class="door" href="https://academic-door.github.io/nber-working-papers-cn/">
       <div class="no">02</div><h3>前沿之门</h3><div class="pn">Working Papers</div>
       <div class="q">在正式发表之前，经济学家在研究什么？</div>
-      <div class="peek"><b>当前开放：NBER Working Papers 中文索引</b>最新 W35497 · 历史档案 989 篇</div>
+      <div class="peek"><b>NBER Working Papers 中文索引</b>每周更新 · 中英标题与摘要 · 历史档案</div>
       <div class="foot"><span class="st"><span class="d"></span>运行中</span><span class="go">进入 <span class="ar">→</span></span></div>
     </a>
-    <a class="door" href="#about">
+    <a class="door" href="https://github.com/academic-door">
       <div class="no">03</div><h3>顶刊之门</h3><div class="pn">Top Five</div>
       <div class="q">五大综合经济学期刊在发表什么？</div>
       <div class="peek"><b>AER · JPE · QJE</b>Review of Economic Studies · Econometrica</div>
-      <div class="foot"><span class="st soon"><span class="d"></span>建设中</span><span class="go">路线图</span></div>
+      <div class="foot"><span class="st soon"><span class="d"></span>建设中</span><span class="go">看进展 <span class="ar">→</span></span></div>
     </a>
-    <a class="door" href="#about">
+    <a class="door" href="https://github.com/academic-door">
       <div class="no">04</div><h3>领域之门</h3><div class="pn">By Field</div>
       <div class="q">从你的研究领域进入经济学文献。</div>
       <div class="peek"><b>发展 · 劳动 · 环境</b>贸易 · 公共 · 金融 · 宏观</div>
-      <div class="foot"><span class="st soon"><span class="d"></span>建设中</span><span class="go">路线图</span></div>
+      <div class="foot"><span class="st soon"><span class="d"></span>建设中</span><span class="go">看进展 <span class="ar">→</span></span></div>
     </a>
   </div>
 
-  <div class="sh" id="today"><span class="k">Today</span><h2>今日精选</h2><span class="rule"></span><a class="more" href="https://academic-door.github.io/econ-paper-monitor/recent72/">全部更新 →</a></div>
+  <div class="sh" id="featured"><span class="k">Featured</span><h2>编辑精选</h2><span class="rule"></span><a class="more" href="https://academic-door.github.io/econ-paper-monitor/recent72/">全部更新 →</a></div>
   <div class="today">
     <div class="feature">
       <div class="fk">Editor's Pick · 编辑推荐</div>
@@ -262,28 +264,26 @@
       <div class="zh">法治还是关系网？执法官员跨区域轮岗与中国市场整合</div>
       <div class="au">Chang Xue · Sihan Chen</div>
       <div class="why">为什么值得读：用官员轮岗这一制度设计，检验"关系"与"法治"在中国市场整合中的相对作用。</div>
-      <div class="src">PUBLIC CHOICE · 中国相关 · 官方在线 2026-07-21</div>
-      <div class="sub">
-        <div class="row"><b><a lang="en" href="https://academic-door.github.io/econ-paper-monitor/paper.html?key=a-two-pronged-approach-to-currency-internationalization-70a25677bcc0">A Two-Pronged Approach to Currency Internationalization</a></b><span>J. INTERNATIONAL ECONOMICS · 国际金融 · 07-21</span></div>
-        <div class="row"><b><a lang="en" href="https://academic-door.github.io/nber-working-papers-cn/papers/w35497.html">Exorbitant Privilege of the Periodic Table?</a></b><span>NBER W35497 · 中国相关 · 07-20</span></div>
-      </div>
+      <div class="src">PUBLIC CHOICE · 中国相关</div>
     </div>
     <div class="latest">
-      <div class="lk">Latest · 最新上线</div>
-      <div class="l"><span class="tm">23:53</span><div><b lang="en">Flexible Covariate Adjustments in RDD</b><div class="mt">J. Econometrics · 计量方法</div></div></div>
-      <div class="l"><span class="tm">22:34</span><div><b lang="en">Fiscal Capacity and the Flypaper Effect</b><div class="mt">Public Choice · 公共</div></div></div>
-      <div class="l"><span class="tm">21:14</span><div><b lang="en">Dollarisation and Monetary Control</b><div class="mt">BIS · 金融 · 宏观</div></div></div>
-      <div class="l"><span class="tm">16:48</span><div><b lang="en">Measuring the Culture of Useful Knowledge</b><div class="mt">CEPR · DP21769</div></div></div>
-      <div class="l"><span class="tm">12:09</span><div><b lang="en">The Economics of Tariffs</b><div class="mt">CEPR · 国际贸易</div></div></div>
+      <div class="lk"><span>Latest · 最新上线</span><span class="src2">每日之门</span></div>
+      <div id="latest-list">
+        <a class="l" href="https://academic-door.github.io/econ-paper-monitor/recent72/"><span class="tm">期刊</span><div><b lang="en">Who Drives Inequality?</b><div class="mt">J. Development Economics · 中国相关</div></div></a>
+        <a class="l" href="https://academic-door.github.io/econ-paper-monitor/recent72/"><span class="tm">期刊</span><div><b lang="en">A Two-Pronged Approach to Currency Internationalization</b><div class="mt">J. International Economics · 国际金融</div></div></a>
+        <a class="l" href="https://academic-door.github.io/econ-paper-monitor/working-papers/today/"><span class="tm">工作</span><div><b lang="en">Dollarisation and Monetary Control</b><div class="mt">BIS · 金融 · 宏观</div></div></a>
+        <a class="l" href="https://academic-door.github.io/econ-paper-monitor/working-papers/today/"><span class="tm">工作</span><div><b lang="en">The Economics of Tariffs</b><div class="mt">CEPR · 国际贸易</div></div></a>
+      </div>
+      <div class="lk" style="border:none;padding-top:12px;justify-content:flex-start"><a href="https://academic-door.github.io/econ-paper-monitor/recent72/" style="color:var(--ink2)">打开最新索引 →</a></div>
     </div>
   </div>
 
   <div class="sh" id="collections"><span class="k">Collections</span><h2>专题策划</h2><span class="rule"></span></div>
   <nav class="colist" aria-label="专题">
-    <a href="https://academic-door.github.io/econ-paper-monitor/topics/china/"><span class="no">01</span><span class="nm">中国经济研究</span><span class="ct">598 篇 · 持续更新</span><span class="ar">→</span></a>
-    <a href="#"><span class="no">02</span><span class="nm">AI 与经济学</span><span class="ct">142 篇</span><span class="ar">→</span></a>
-    <a href="#"><span class="no">03</span><span class="nm">因果推断方法</span><span class="ct">89 篇</span><span class="ar">→</span></a>
-    <a href="#"><span class="no">04</span><span class="nm">诺奖得主演讲</span><span class="ct">规划中</span><span class="ar">→</span></a>
+    <a href="https://academic-door.github.io/econ-paper-monitor/topics/china/"><span class="no">01</span><span class="nm">中国经济研究</span><span class="ct">持续更新</span><span class="ar">→</span></a>
+    <div class="np"><span class="no">02</span><span class="nm">AI 与经济学</span><span class="ct">规划中</span><span class="ar"></span></div>
+    <div class="np"><span class="no">03</span><span class="nm">因果推断方法</span><span class="ct">规划中</span><span class="ar"></span></div>
+    <div class="np"><span class="no">04</span><span class="nm">诺奖得主演讲</span><span class="ct">规划中</span><span class="ar"></span></div>
   </nav>
 
   <section class="charter" id="about" aria-labelledby="about-title">
@@ -304,12 +304,14 @@
   <nav aria-label="页脚导航">
     <a href="https://academic-door.github.io/econ-paper-monitor/">每日之门</a>
     <a href="https://academic-door.github.io/nber-working-papers-cn/">前沿之门</a>
+    <a href="https://academic-door.github.io/econ-paper-monitor/feed.xml">RSS</a>
     <a href="https://github.com/academic-door">GitHub</a>
   </nav>
   <span>Academic Door / 学术传送门 · 公众号 · 小红书</span>
 </div></footer>
 
 <script>
+  /* Online-presence badge — progressive enhancement. */
   (function () {
     var el = document.getElementById("presence");
     if (!el) return;
@@ -345,6 +347,33 @@
     }
     refresh();
     setInterval(refresh, 60000);
+  })();
+
+  /* Latest — live from the Econ Papers Daily RSS (same-origin). Falls back to static rows. */
+  (function () {
+    var box = document.getElementById("latest-list");
+    if (!box) return;
+    fetch("/econ-paper-monitor/feed.xml", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (t) {
+        var xml = new DOMParser().parseFromString(t, "application/xml");
+        if (xml.querySelector("parsererror")) return;
+        var items = [].slice.call(xml.querySelectorAll("item")).slice(0, 5);
+        if (!items.length) return;
+        function esc(s){var d=document.createElement("div");d.textContent=s||"";return d.innerHTML;}
+        var html = "";
+        items.forEach(function (it) {
+          var title = (it.querySelector("title") || {}).textContent || "";
+          var link = (it.querySelector("link") || {}).textContent || "https://academic-door.github.io/econ-paper-monitor/";
+          var cat = (it.querySelector("category") || {}).textContent || "Econ Papers Daily";
+          var pd = (it.querySelector("pubDate") || {}).textContent || "";
+          var d = pd ? new Date(pd) : null;
+          var tm = (d && !isNaN(d)) ? (("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0"+d.getDate()).slice(-2)) : "";
+          html += '<a class="l" href="' + esc(link) + '"><span class="tm">' + tm + '</span><div><b lang="en">' + esc(title) + '</b><div class="mt">' + esc(cat) + '</div></div></a>';
+        });
+        box.innerHTML = html;
+      })
+      .catch(function () { /* keep static fallback */ });
   })();
 </script>
 </body>

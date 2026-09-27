@@ -8,10 +8,14 @@
 
 公开网站：<https://academic-door.github.io/>
 
-## 公开项目
+## 公开产品地图
 
-- [学术传送门 NBER 工作论文](https://academic-door.github.io/nber-working-papers-cn/)：NBER 工作论文中英文整理、归档与检索。
-- [Econ Papers Daily](https://academic-door.github.io/econ-paper-monitor/)：每日追踪经济学期刊论文与工作论文。
+- [每日之门 · Econ Papers Daily](https://academic-door.github.io/econ-paper-monitor/)：每日追踪经济学期刊论文与工作论文。
+- [前沿之门 · Working Papers](https://academic-door.github.io/nber-working-papers-cn/)：NBER 工作论文中英文整理、归档与检索。
+- [顶刊之门 · Top Five](https://academic-door.github.io/journals/top5/)：五大综合经济学期刊卷期与论文浏览。
+- [领域之门 · By Field](https://academic-door.github.io/journals/fields/)：按经济学研究领域进入期刊与论文。
+
+`/journals/` 是两个期刊公开入口的总览页，不是第五扇门；Composer 是经认证的内部出版工作台，不属于公开产品地图。
 
 ## 说明
 
